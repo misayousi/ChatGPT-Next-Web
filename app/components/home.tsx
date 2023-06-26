@@ -27,6 +27,7 @@ import { SideBar } from "./sidebar";
 import { useAppConfig } from "../store/config";
 import { AuthPage } from "./auth";
 import { getClientConfig } from "../config/client";
+import StaticImage from '../icons/wx.png'; // 导入静态图片文件，替换为实际的路径
 
 export function Loading(props: { noLogo?: boolean }) {
   return (
@@ -138,6 +139,7 @@ function Screen() {
           <SideBar className={isHome ? styles["sidebar-show"] : ""} />
 
           <div className={styles["window-content"]} id={SlotID.AppBody}>
+             <img src={StaticImage} alt="Static Image" /> {/* 添加静态图片 */}
             <Routes>
               <Route path={Path.Home} element={<Chat />} />
               <Route path={Path.NewChat} element={<NewChat />} />
